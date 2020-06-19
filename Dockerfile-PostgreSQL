@@ -2,5 +2,5 @@ FROM postgres:latest
 RUN mkdir -p /docker-entrypoint-initdb.d 
 RUN apt-get update
 RUN apt-get install -y wget
-RUN wget https://www.seegrid.csiro.au/subversion/PID/trunk/pidsvc/src/main/db/postgresql.sql
+RUN wget https://www.seegrid.csiro.au/subversion/PID/trunk/pidsvc/src/main/db/postgresql.sql --no-check-certificate
 COPY ./postgres-init.sh /docker-entrypoint-initdb.d/
